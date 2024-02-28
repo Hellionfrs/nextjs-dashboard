@@ -6,7 +6,6 @@ import {
 } from '@/app/lib/definitions';
 import { lusitana } from '@/app/ui/fonts';
 
-
 export default async function CustomersTable({
   customers,
 }: {
