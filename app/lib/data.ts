@@ -11,6 +11,8 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { error } from 'console';
+import { notFound } from 'next/navigation';
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
@@ -175,7 +177,7 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-
+    
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
