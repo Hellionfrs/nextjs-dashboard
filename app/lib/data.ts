@@ -249,3 +249,14 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+// TODO: create user
+export async function createUser(userData: {name: string, email:string, password:string}) {
+  try {
+    const newUser = await sql`INSERT INTO users (name, email, password) VALUES (${userData.name}, ${userData.email}, ${userData.password})`
+    return newUser.rows[0] as User
+  } catch (error) {
+    console.log('Failed to created user:', error)
+    throw new Error('Failed to created user.')
+  }
+}

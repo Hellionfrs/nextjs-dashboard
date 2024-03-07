@@ -140,3 +140,5 @@ export async function authenticate(
     throw error;
   }
 }
+
+//TODO function signUp
